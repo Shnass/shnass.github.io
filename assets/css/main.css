@@ -17,8 +17,22 @@ html, body {
   @media (max-width: 991px) {
     .page {
       padding-top: 3rem;
-      background-image: url(../images/bg-dark.jpg);
-      color: #fff; } }
+      background-image: none;
+      color: #fff; } 
+
+      .page:after{
+        position: fixed;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        content: '';
+        background-image: url(../images/bg-dark.jpg);;
+
+      }
+
+    }
 
 .page-content {
   margin-left: auto;
@@ -72,14 +86,36 @@ img {
 main p {
   text-align: justify;
   text-align-last: left; }
-main h1 {
+main h1, h2 {
   text-align: center;
   font-size: 1.9rem;
   font-weight: bold; }
 
 .cta {
+  margin-top: 50px;
   text-align: center;
   font-weight: bold; }
+
+.cta a{
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.cta a:after{
+  height: 5px;
+  width: 100%;
+  content: '';
+  top: 100%;
+  background: #fc0;
+  left: 0;
+  position: absolute;
+  width: 0;
+  transition: all 0.25s;
+}
+.cta a:hover:after{
+  width: 100%;
+}
+
 
 aside {
   margin-top: 6rem; }
@@ -104,6 +140,10 @@ aside {
 .festival-logo img {
   max-width: 100%; }
 
+.partners{
+  margin-bottom: 3rem;
+}
+
 .partners-list {
   list-style: none;
   padding: 0;
@@ -121,7 +161,8 @@ aside {
       column-gap: 5%; } }
 
 .partners-list li {
-  width: 15%; }
+  text-align: center;
+  width: 11%; }
   @media (max-width: 991px) {
     .partners-list li {
       width: 28%;
@@ -130,17 +171,43 @@ aside {
         max-width: 90%; } }
 
 .partners-list img {
-  max-height: 12vmin;
+  max-height: 9vmin;
   filter: brightness(0.1); }
   @media (max-width: 991px) {
     .partners-list img {
       filter: none; } }
 
+.note{
+  padding: 20px;
+  font-size: 90%;
+  color: #fff;
+  background: rgba(0,0,255,0.3);
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.note p:first-child{
+  margin-top: 0;
+}
+.note p:last-child{
+  margin-bottom: 0;
+}
+
+
 footer {
   padding-top: 10rem;
   padding-bottom: 5rem;
   text-align: center; }
+  footer p{
+    font-size: 1.4rem;
+    font-weight: bold;
+
+  }
   @media (max-width: 991px) {
+      ul{
+        list-style: none;
+        padding: 0;   
+      }
+
     footer {
       padding-top: 4rem; } }
   footer a {
