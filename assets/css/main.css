@@ -29,7 +29,7 @@
 
 .btn--dashed {
   color: #fff;
-  border: 5px dashed; }
+  border: 6px dotted; }
   .btn--dashed.is-copied {
     color: var(--blue); }
 
@@ -152,6 +152,7 @@
       width: 75%; } }
   @media (orientation: portrait) {
       .swag--rabbit img {
+        max-height: 50vh;
         transform: translateY(15vh); } }
 
 .copy-content {
