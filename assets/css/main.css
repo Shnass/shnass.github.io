@@ -29,9 +29,12 @@
 
 .btn--dashed {
   color: #fff;
-  border: 6px dotted; }
+  border: 5px dotted; }
   .btn--dashed.is-copied {
     color: var(--blue); }
+  @media (max-width: 767px) {
+    .btn--dashed {
+      border-width: 4px; } }
 
 .btn--blue {
   background: var(--blue);
