@@ -12,7 +12,8 @@
   position: relative;
   text-align: center;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  transition: all 0.3s; }
 
 .btn--huge {
   font-size: 5.4vh;
@@ -147,7 +148,7 @@
       margin: auto;
       left: 0; }
       .swag--rabbit img {
-        transform: translateY(10vh); } }
+        transform: translateY(15vh); } }
 
 .copy-content {
   display: inline-block;
