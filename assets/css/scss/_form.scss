@@ -1,0 +1,43 @@
+.buttons {
+}
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  text-decoration: none;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.btn--huge {
+  font-size: 5.4vh;
+  padding: 0em 0.3em;
+  display: inline-flex;
+  height: 1.9em;
+  align-items: center;
+  border-radius: 28px;
+
+  @media (orientation: portrait) {
+    font-size: 4.3vh;
+    border-radius: 0.5em;
+  }
+}
+.btn--dashed {
+  color: #fff;
+  border: 5px dashed;
+  &.is-copied {
+    color: var(--blue);
+  }
+}
+.btn--blue {
+  background: var(--blue);
+  color: #fff;
+  &:hover {
+    background: var(--dark-blue);
+  }
+  &:active {
+    //@include background-opacity(var(--dark-blue), 0.6);
+    background: rgba(0, 1, 128, 0.6);
+  }
+}
