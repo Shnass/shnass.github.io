@@ -146,7 +146,11 @@
       bottom: 0vh;
       width: 90%;
       margin: auto;
-      left: 0; }
+      left: 0; } }
+  @media (orientation: portrait) and (max-width: 400px) {
+    .swag--rabbit {
+      width: 75%; } }
+  @media (orientation: portrait) {
       .swag--rabbit img {
         transform: translateY(15vh); } }
 
