@@ -61,9 +61,9 @@ $dotsClb: url(../images/common/lp_element_2lb.svg);
     align-self: stretch;
     position: relative;
     width: 100%;
-    background: url(../images/common/lp_element_1.svg) space no-repeat left
+    background: url(../images/common/lp_element_1.svg) space no-repeat center
         top/auto 0.18em,
-      url(../images/common/lp_element_1.svg) space no-repeat left bottom/auto
+      url(../images/common/lp_element_1.svg) space no-repeat center bottom/auto
         0.18em;
     &:before {
       content: "";
