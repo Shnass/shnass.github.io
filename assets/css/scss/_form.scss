@@ -47,6 +47,16 @@ $dotsClb: url(../images/common/lp_element_2lb.svg);
       0.55em,
     url(../images/common/lp_element_2lb.svg) no-repeat left 0 bottom 0.02em/0.55em
       0.55em;
+  &:after {
+    content: "";
+    width: calc(100% - 1.14em);
+    left: 0.57em;
+    bottom: 0;
+    position: absolute;
+    height: 0.18em;
+    background: url(../images/common/lp_element_1.svg) space no-repeat center
+      bottom;
+  }
   &.is-copied {
     filter: brightness(1) invert(0);
   }
@@ -61,10 +71,15 @@ $dotsClb: url(../images/common/lp_element_2lb.svg);
     align-self: stretch;
     position: relative;
     width: 100%;
-    background: url(../images/common/lp_element_1.svg) space no-repeat left
-        top/auto 0.18em,
-      url(../images/common/lp_element_1.svg) space no-repeat left bottom/auto
-        0.18em;
+    &:after {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 0.18em;
+      background: url(../images/common/lp_element_1.svg) space no-repeat center;
+      content: "";
+    }
     &:before {
       content: "";
       position: absolute;
