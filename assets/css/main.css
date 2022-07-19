@@ -28,13 +28,38 @@
       border-radius: 0.5em; } }
 
 .btn--dashed {
-  color: #fff;
-  border: 5px dotted; }
+  border-radius: 0;
+  color: var(--blue);
+  border: 0px dotted transparent;
+  border-radius: 0;
+  color: var(--blue);
+  border: 0px dotted transparent;
+  padding: 0 0.57em;
+  filter: brightness(0) invert(1);
+  background: url(../images/common/lp_element_2.svg) no-repeat left 0 top 0.02em/0.55em 0.55em, url(../images/common/lp_element_2rt.svg) no-repeat right 0 top 0.02em/0.55em 0.55em, url(../images/common/lp_element_2rb.svg) no-repeat right 0 bottom 0.02em/0.55em 0.55em, url(../images/common/lp_element_2lb.svg) no-repeat left 0 bottom 0.02em/0.55em 0.55em; }
   .btn--dashed.is-copied {
-    color: var(--blue); }
+    filter: brightness(1) invert(0); }
   @media (max-width: 767px) {
     .btn--dashed {
-      border-width: 4px; } }
+      border-width: 0px; } }
+  .btn--dashed .copy-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    position: relative;
+    width: 100%;
+    background: url(../images/common/lp_element_1.svg) space no-repeat left top/auto 0.18em, url(../images/common/lp_element_1.svg) space no-repeat left bottom/auto 0.18em; }
+    .btn--dashed .copy-content:before {
+      content: "";
+      position: absolute;
+      content: "";
+      position: absolute;
+      width: calc(100% + 1.2em);
+      left: -0.6em;
+      height: calc(100% - 1.24em);
+      top: 0.605em;
+      background: url(../images/common/lp_element_1.svg) no-repeat space left top/auto 0.18em, url(../images/common/lp_element_1.svg) no-repeat space right top/auto 0.18em; }
 
 .btn--blue {
   background: var(--blue);
@@ -101,9 +126,11 @@
 
 .claim-page__buttons {
   display: flex;
-  column-gap: 40px;
+  column-gap: 4vh;
   width: 57%;
   margin-top: 6vh; }
+  .claim-page__buttons btn {
+    flex-grow: 0.2; }
   .claim-page__buttons .btn:last-child {
     flex-grow: 1; }
   @media (orientation: portrait) {
@@ -160,7 +187,7 @@
 
 .copy-content {
   display: inline-block;
-  padding: 0 0.5em; }
+  /*padding: 0 0.5em;*/ }
 
 :root {
   --black: #001b30;

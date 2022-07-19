@@ -35,7 +35,8 @@
 							EXMOFLY-W
 						</span>
 					</span>
-
+					<!-- <img src="assets/images/common/lp_element_1.svg" alt=""> -->
+					<!-- <img src="assets/images/common/lp_element_2.svg" alt=""> -->
 					<a href="" class="btn btn--huge btn--blue">
 						Sign up
 					</a>
@@ -57,19 +58,23 @@
 
 
 	<script>
-		const codeCopy = document.querySelector('.js-copy'), 
-			  copiedText = "Copied!",
-			  widthInitial = codeCopy.offsetWidth,
-			  copyContent = codeCopy.dataset.copy;
 
-		codeCopy.addEventListener('click', function(e){
+	window.onload = (event) => {
+				const codeCopy = document.querySelector('.js-copy'),
+			copiedText = "Copied!",
+			widthInitial = codeCopy.offsetWidth,
+			copyContent = codeCopy.dataset.copy;
+
+		console.log(widthInitial);
+
+		codeCopy.addEventListener('click', function (e) {
 			e.preventDefault();
 			const inputTemp = document.createElement('textarea');
 
 			codeCopy.classList.add('is-copied');
 			codeCopy.querySelector('.copy-content').innerHTML = copiedText;
 			codeCopy.style.width = widthInitial + 'px';
-			
+
 
 			setTimeout(function () {
 				codeCopy.classList.remove('is-copied');
@@ -86,6 +91,12 @@
 			return result;
 
 		})
+				
+
+	};
+
+
+
 	</script>
 
 

@@ -35,9 +35,12 @@
 }
 .claim-page__buttons {
   display: flex;
-  column-gap: 40px;
+  column-gap: 4vh;
   width: 57%;
   margin-top: 6vh;
+  btn {
+    flex-grow: 0.2;
+  }
   .btn:last-child {
     flex-grow: 1;
   }
@@ -101,5 +104,5 @@
 }
 .copy-content {
   display: inline-block;
-  padding: 0 0.5em;
+  /*padding: 0 0.5em;*/
 }
