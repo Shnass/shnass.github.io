@@ -1,1 +1,211 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="/manifest.json"><title>Closer Record Store Print Helper</title><style>@page{size:auto;margin:5mm 0}@page{size:auto;margin:0 0}html{height:100%}body{margin:0;padding:0;font-family:sans-serif;color:#000;font-size:16px;height:100%}.releases-screen{width:33.33334%;flex-shrink:0}.releases{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;-webkit-flex-wrap:wrap;-moz-flex-wrap:wrap;-ms-flex-wrap:wrap;-o-flex-wrap:wrap;flex-wrap:wrap}.release-card{width:50%;display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;-webkit-flex-direction:column;-moz-flex-direction:column;-ms-flex-direction:column;-o-flex-direction:column;flex-direction:column;height:4.41666cm;height:4.952cm;height:3.7125cm;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:.5cm;border:1px solid #ccc;position:relative}.release-qr{position:absolute;right:25px;top:10px}.release-name-complex{display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;padding-right:10px}.release-name-complex img{flex-shrink:0;-ms-align-self:center;align-self:center;width:70px;height:70px;object-fit:contain;margin-right:20px;filter:grayscale(1)}.release-card-action{position:absolute;right:10px;top:10px;background:#fff;padding:5px;height:30px;border-radius:20px}.release-card-action a{display:inline-block;vertical-align:middle;height:30px;width:30px;border-radius:30px}.item-remove{background-color:#b22222}.item-duplicate{background-color:#7fff00}.release-footer{flex-grow:1;display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;justify-content:space-between;font-size:14px;-ms-align-items:flex-end;align-items:flex-end}.release-price{font-size:18px;font-weight:700}#form{flex-shrink:0;width:33.33334%;background:#00ffa0;display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;-ms-align-items:center;align-items:center;justify-content:center}.form-element{margin:30px}input[type=text]{width:200px;height:50px;border-radius:5px;border:8px solid #11caff;padding:10px;font-size:16px;text-align:center;-webkit-transition:all .3s;-o-transition:all .3s;transition:all .3s}button{height:86px;line-height:86px;background:#11caff;padding-left:25px;padding-right:25px;font-size:25px;font-family:sans-serif;color:#fff;display:block;border:0;border-radius:5px;font-weight:700}input[type=text]:focus{font-size:20px;border-color:#ce72ff}body{overflow:hidden}.fields{-webkit-transition:all .15s ease-in;-o-transition:all .15s ease-in;transition:all .15s ease-in;width:300%;display:-webkit-flex;display:-moz-flex;display:-ms-flex;display:-o-flex;display:flex;height:100%;position:relative;left:0}.second-step .fields{left:-100%}.third-step .fields{left:-200%}body.final{overflow:visible}.await{overflow:hidden;background:#00c7ff;width:33.33334%;position:relative;flex-shrink:0}.await span{width:64px;height:64px;position:absolute;left:0;top:0;bottom:0;right:0;margin:auto;background:url(loader.png) no-repeat;-webkit-background-size:contain;background-size:contain;animation:rotate 2s linear infinite forwards}@keyframes rotate{from{-webkit-transform:rotate(0);-ms-transform:rotate(0);-o-transform:rotate(0);transform:rotate(0)}to{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg)}}.await p{max-width:900px;color:#fff;font-style:italic;font-size:18px;text-align:center;margin-left:auto;margin-right:auto;padding-top:30px;padding-left:30px;padding-right:30px}.print-aware{padding:30px;color:#fff;background:#00f}.print-aware p{margin:0;margin-left:auto;margin-right:auto;max-width:900px}@page{size:A4}@media print{#form,.await,.print-aware,.release-card-action{display:none!important}.release-card{border-color:transparent;color:#000}.releases-screen{width:100%}.fields{position:static!important;left:0!important;width:100%}body,html{width:210mm;height:297mm}}</style></head><body id="scene"><noscript>You need to enable JavaScript to run this app.</noscript><div class="fields"><div id="test"></div><form id="form" autocomplete="off"><div class="form-element"><input name="N" id="NMB" autofocus required placeholder="number of records"></div><div class="form-element" style="display:none"><input name="C" id="CUR" value="32" required placeholder="EUR to UAH"></div><div class="form-element"><input name="P" id="PG" value="1" required placeholder="page"></div><div class="form-element"><button>GO</button></div></form><div class="await"><p>Количество запросов в минуту к базе данных Дискогса ограничено, поэтому процесс займет какое-то время.<br/>Please be patient :)</p><span></span></div><div class="releases-screen"><div class="print-aware"><p>Нажмите Сtrl+З (если у вас windows) или Command-P (если у вас ios) для вызова диаологового окна печати.<br/>Рамочки вокруг элементов на печати видны не будут.</p></div><div id="root" class="releases"></div></div></div><script type="text/javascript" src="/static/js/main.dfde8f2a.js"></script></body></html>
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>My little puggy</title>
+    <link href="static/css/main.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="scene"> 
+      <div class="w">
+        <header class="page__header"><a class="page__header-logo" href=""> <img src="static/images/common/logo-text.png" alt=""></a>
+          <nav class="page__navi"> 
+            <div class="page__navi__wave"> <a href=""> <img src="static/images/common/logo-wave.png" alt=""></a></div>
+            <ul>
+              <li><a href="">Inside</a></li>
+              <li><a href="">Outside</a></li>
+              <li><a href="">Accommodation</a></li>
+              <li><a href="">Gallery</a></li>
+              <li><a href="">Pricing</a></li>
+              <li><a href="">Crew &amp; Contact</a></li>
+              <li><a href="">Book Your Stay</a></li>
+              <li><a class="event-link" href=""> </a></li>
+            </ul>
+          </nav>
+        </header>
+        <div class="page__body"> 
+          <section class="section"> 
+            <div class="screen--start"> <img src="static/images/content/outside.jpg" alt="">
+              <h1 class="title">Studio for electronic musicians seeking silence</h1><a class="btn-play" href=""></a>
+            </div>
+            <div class="section__content"> 
+              <h3 class="subtitle-ir subtitle-ir--nature"><span>music sounds better in nature</span></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+            </div>
+            <hr class="hr--styled">
+          </section>
+          <section class="section"> 
+            <header class="section__header">
+              <h2>studio </h2>
+              <div class="iph"> 
+                <svg class="icon icon-snail ">
+                  <use xlink:href="static/images/sprite/symbol/sprite.svg#snail"></use>
+                </svg>
+              </div>
+            </header>
+            <figure class="section__image"> <img src="static/images/content/section-02.jpg" alt=""></figure>
+            <div class="section__content"> 
+              <h3 class="subtitle-ir subtitle-ir--check"><span>Perfect place to finish your album </span></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              <p><a class="expand" href="">Gear &amp; specs </a></p>
+            </div>
+            <hr class="hr--styled">
+          </section>
+          <section class="section">
+            <header class="section__header"> 
+              <h2>Location</h2>
+              <div class="iph"> 
+                <svg class="icon icon-river ">
+                  <use xlink:href="static/images/sprite/symbol/sprite.svg#river"></use>
+                </svg>
+              </div>
+            </header>
+            <figure class="section__image"> <img src="static/images/content/section-03.jpg" alt=""></figure>
+            <div class="section__content">
+              <div class="location">
+                <figure> <img src="static/images/content/map.png" alt=""></figure>
+                <div class="location__text"> 
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                </div>
+              </div>
+            </div>
+            <hr class="hr--styled">
+          </section>
+          <section class="section"> 
+            <header class="section__header"> 
+              <h2>Accomodation </h2>
+              <div class="iph"> 
+                <svg class="icon icon-home ">
+                  <use xlink:href="static/images/sprite/symbol/sprite.svg#home"></use>
+                </svg>
+              </div>
+            </header>
+            <figure class="section__image"> <img src="static/images/content/section-04.jpg" alt=""></figure>
+            <div class="section__content"> 
+              <h3 class="subtitle-ir subtitle-ir--focus"><span>Your countryside vacation + focused studio time  </span></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+            </div>
+            <hr class="hr--styled">
+          </section>
+          <section class="section"> 
+            <header class="section__header"> 
+              <h2>Gallery </h2>
+              <div class="iph"> 
+                <svg class="icon icon-mountain ">
+                  <use xlink:href="static/images/sprite/symbol/sprite.svg#mountain"></use>
+                </svg>
+              </div>
+            </header>
+            <figure class="section__image">
+              <ul class="gallery">
+                <li><img src="static/images/content/section-05.jpg" alt=""></li>
+              </ul>
+            </figure>
+            <div class="section__content"> 
+              <h3 class="subtitle-ir subtitle-ir--you"><span>Someone is missing in this photos. Maybe you.  </span></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+            </div>
+            <hr class="hr--styled">
+          </section>
+          <section class="section"> 
+            <header class="section__header"> 
+              <h2>Pricing </h2>
+              <div class="iph"> 
+                <svg class="icon icon-clip ">
+                  <use xlink:href="static/images/sprite/symbol/sprite.svg#clip"></use>
+                </svg>
+              </div>
+            </header>
+            <div class="section__content"> 
+              <h3 class="subtitle-ir subtitle-ir--pricing"><span>But let's talk first</span></h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+              <dl class="pricing-list"> 
+                <div>
+                  <dt>1 day </dt>
+                  <dd>200 $</dd>
+                </div>
+                <div>
+                  <dt>1 day with overnight stay </dt>
+                  <dd>250 $</dd>
+                </div>
+                <div>
+                  <dt>weekedn ticket </dt>
+                  <dd>600 $</dd>
+                </div>
+                <div>
+                  <dt>5 days with accomodation </dt>
+                  <dd>1100 $</dd>
+                </div>
+              </dl>
+            </div>
+            <hr class="hr--styled">
+          </section>
+          <section class="section"> 
+            <header class="section__header"> 
+              <h2>Crew &amp; Contact </h2>
+              <div class="iph"> 
+                <svg class="icon icon-face ">
+                  <use xlink:href="static/images/sprite/symbol/sprite.svg#face"></use>
+                </svg>
+              </div>
+            </header>
+            <div class="section__content">
+              <div class="media">
+                <div class="media__m crew-pic"> <img src="static/images/content/crew.jpg" alt=""></div>
+                <div class="media__t"> 
+                  <h3 class="subtitle-ir subtitle-ir--hello"><span>Hello </span></h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+                  <address><span>email: </span><a href="mailto:">ssss@fff.aaa</a></address>
+                  <address> <span> tel: </span><a href="tel:">+1234567890</a></address>
+                  <ul class="social-links"> 
+                    <li><a href="">
+                        <svg> </svg></a></li>
+                    <li><a href="">
+                        <svg> </svg></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <hr class="hr--styled">
+          </section>
+          <section class="section"> 
+            <header class="section__header"> 
+              <h2>Book your stay</h2>
+              <div class="iph"> 
+                <svg class="icon icon-contact ">
+                  <use xlink:href="static/images/sprite/symbol/sprite.svg#contact"></use>
+                </svg>
+              </div>
+            </header>
+            <div class="section__content">
+              <h3 class="subtitle-ir subtitle-ir--book"><span>Or just write to us whatever you want to say</span></h3>
+              <form action=""> 
+                <div class="form-row"> 
+                  <input type="text" placeholder="Your e-mail">
+                </div>
+                <div class="form-row"> 
+                  <textarea placeholder="Tell Us"> </textarea>
+                </div>
+                <div class="form-row form-row--submit"> 
+                  <button type="submit">Send</button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="section section--bdd">
+            <div class="events"> 
+              <figure><img src="static/images/common/sun.png" alt="" width="266"></figure>
+              <div class="events__text">
+                <h3 class="subtitle-ir subtitle-ir--events"><span>We also organize nice events</span></h3>
+                <p>
+                   Please, check them &nbsp;<a href="">here </a></p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer class="page__footer"><small>&copy; 2023</small></footer>
+      </div>
+    </div>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
