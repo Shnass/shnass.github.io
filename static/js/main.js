@@ -1,1 +1,1 @@
-"use strict";console.log("hi");
+"use strict";$(function(){$("[data-section-link]").click(function(t){t.preventDefault();t=$(this).data("sectionLink");$("html, body").animate({scrollTop:$('[data-section="'+t+'"]').offset().top-20+"px"},500)}),$(".page__navi__wave").click(function(t){t.preventDefault(),$(this).parents(".page__navi").toggleClass("is-called")})}),console.log("hi");
